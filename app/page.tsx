@@ -1,18 +1,19 @@
 export default function Home() {
   return (
-    <section className="space-y-10">
-      {/* Intro */}
-      <div className="space-y-4">
-        <h1 className="text-4xl font-bold leading-tight">
+    <section className="space-y-8 sm:space-y-12">
+      <h1 className="
+        text-3xl sm:text-4xl
+        font-bold
+        leading-tight
+      ">
           안녕하세요 👋 <br />
           프론트엔드 개발자 <span className="text-blue-500">현준용</span>입니다.
-        </h1>
+      </h1>
 
-        <p className="max-w-2xl text-gray-600">
-          혼자 하는 것보다는 여러 사람과 협업하며 커뮤니케이션하는 것을 즐기고,  
-          어려운 문제에 직면하더라도 해결하기 위해 끊임없이 도전하는 개발자를 지향합니다.
-        </p>
-      </div>
+      <p className="max-w-2xl text-gray-600">
+        혼자 하는 것보다는 여러 사람과 협업하며 커뮤니케이션하는 것을 즐기고,  
+        어려운 문제에 직면하더라도 해결하기 위해 끊임없이 도전하는 개발자를 지향합니다.
+      </p>
 
       {/* Profile */}
       <div>
