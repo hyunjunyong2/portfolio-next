@@ -1,4 +1,12 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact',
+  description:
+    '프론트엔드 개발자 현준용의 연락처 페이지입니다. 이메일, 전화번호, GitHub 정보를 확인할 수 있습니다.',
+};
+
 
 export default function Contact() {
   return (

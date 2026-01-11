@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About',
+  description:
+    '사용자 경험과 유지보수를 함께 고민하는 프론트엔드 개발자 현준용의 소개 페이지입니다.',
+};
+
 export default function About() {
   return (
     <section className="space-y-10">

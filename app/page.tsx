@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '홈',
+  description:
+    '프론트엔드 개발자 현준용의 포트폴리오 홈입니다. Vue, Nuxt 실무 경험과 Next.js 기반 개인 프로젝트를 소개합니다.',
+};
+
 export default function Home() {
   return (
     <section className="space-y-8 sm:space-y-12">
