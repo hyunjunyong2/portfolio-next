@@ -22,7 +22,7 @@ export default function Contact() {
       {/* Cards */}
       <ul className="space-y-4">
         {/* Email */}
-        <li className="rounded-lg border p-4">
+        <li className="rounded-lg border p-4 transition hover:-translate-y-1 hover:shadow-sm">
           <p className="mb-2 text-sm font-medium text-gray-500">📧 Email</p>
           <div className="space-y-1">
             <a
@@ -41,7 +41,7 @@ export default function Contact() {
         </li>
 
         {/* Phone */}
-        <li className="rounded-lg border p-4">
+        <li className="rounded-lg border p-4 transition hover:-translate-y-1 hover:shadow-sm">
           <p className="mb-2 text-sm font-medium text-gray-500">📞 Phone</p>
           <a
             href="tel:01077144649"
@@ -52,7 +52,7 @@ export default function Contact() {
         </li>
 
         {/* GitHub */}
-        <li className="rounded-lg border p-4">
+        <li className="rounded-lg border p-4 transition hover:-translate-y-1 hover:shadow-sm">
           <p className="mb-2 text-sm font-medium text-gray-500">💻 GitHub</p>
           <div className="space-y-1">
             <Link

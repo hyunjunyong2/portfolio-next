@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import FadeIn from '@/components/motion/FadeIn';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -10,9 +11,11 @@ export default function About() {
   return (
     <section className="space-y-10">
       {/* Title */}
-      <h1 className="text-3xl sm:text-4xl font-bold leading-tight">
-        사용자 경험과 유지보수를 함께 고민하는 프론트엔드 개발자
-      </h1>
+      <FadeIn>
+        <h1 className="text-3xl sm:text-4xl font-bold">
+          사용자 경험과 유지보수를 함께 고민하는 프론트엔드 개발자
+        </h1>
+      </FadeIn>
 
       {/* Intro */}
       <div className="space-y-4 text-sm sm:text-base text-gray-700">
