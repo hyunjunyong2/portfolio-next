@@ -56,7 +56,7 @@ export default function Contact() {
           <p className="mb-2 text-sm font-medium text-gray-500">💻 GitHub</p>
           <div className="space-y-1">
             <Link
-              href="https://github.com/hyunjunyong"
+              href="https://github.com/hyunjunyong2"
               target="_blank"
               className="block font-medium text-blue-500 hover:underline"
             >

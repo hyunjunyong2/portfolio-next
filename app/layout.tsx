@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Header from '@components/layouts/Header';
+import Footer from '@components/layouts/Footer';
 
 export const metadata: Metadata = {
   // metadataBase: new URL('내 url'), // vercel 배포후 수정예정
@@ -42,6 +43,7 @@ export default function RootLayout({
         <main className="mx-auto w-full max-w-5xl px-4 sm:px-6 py-10">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );
