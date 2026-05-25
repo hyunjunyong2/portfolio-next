@@ -24,21 +24,21 @@ export const projects: Project[] = [
   {
     category: 'work',
     slug: 'usimsa-hawaii',
-    title: '유심사 신규 서비스 (Hawaii)',
+    title: '유심사 메인 서비스 Next.js 전환',
     company: '가제트코리아 (유심사)',
     period: '2026.03 ~ 현재',
-    summary: 'Next.js App Router + Turborepo 모노레포 기반 신규 서비스 구축',
+    summary: 'Turborepo 모노레포 기반 Nuxt3 → Next.js 점진적 전환',
 
     description: [
-      'Next.js App Router와 Turborepo(pnpm workspace)를 활용한 모노레포 구조의 신규 통합 유심사 서비스를 구축하고 있습니다.',
-      'my-usimsa, product-usimsa, affiliate-usimsa 세 개의 앱을 하나의 모노레포로 관리하는 구조를 설계했습니다.',
-      '본인인증(CI) 플로우, 온보딩 페이지, 내 정보 페이지 등 핵심 사용자 흐름을 개발했습니다.',
-      '통합인증 플로우 전체 작업을 담당하여 기존 레거시 서비스와의 인증 연동을 처리했습니다.',
+      'Nuxt3 기반 유심사 메인 서비스를 Next.js App Router로 점진적으로 전환하는 프로젝트를 진행하고 있습니다.',
+      'Turborepo(pnpm workspace) 모노레포 구조로 my-usimsa, product-usimsa, affiliate-usimsa 앱을 통합 관리합니다.',
+      '기존 Nuxt3 레거시와 병행하며 신규 페이지를 Next.js로 구축하는 점진적 전환 전략을 취하고 있습니다.',
+      '통합인증 플로우 전체를 담당하여 레거시 서비스와의 인증 연동을 설계 및 구현했습니다.',
     ],
 
     role: [
       '본인인증 플로우 설계 및 구현 (CI flow, 약관, 인증 실패 UI)',
-      '온보딩 페이지 개발 (US-2192)',
+      '온보딩 페이지 개발',
       '내 정보 페이지 전체 UI 설계 및 API 연동',
       '공통 디자인 컴포넌트 제작 (체크박스, Agreement)',
       '연결된 통합계정 조회 페이지 생성',

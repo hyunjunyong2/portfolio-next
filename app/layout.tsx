@@ -4,7 +4,7 @@ import Header from '@components/layouts/Header';
 import Footer from '@components/layouts/Footer';
 
 export const metadata: Metadata = {
-  // metadataBase: new URL('내 url'), // vercel 배포후 수정예정
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
   title: {
     default: '현준용 | 프론트엔드 개발자',
     template: '%s | 현준용',
