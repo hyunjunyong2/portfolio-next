@@ -183,9 +183,9 @@
       <div class="project-block">
         <div class="project-title">유심사 메인 웹사이트 — B2C 서비스 개발 및 유지보수</div>
         <ul>
-          <li>소셜 로그인 통합인증 플로우 설계 및 구현 (카카오/네이버 OAuth 연동)</li>
-          <li>제휴쿠폰 공통 모달 컴포넌트 설계 및 API 연동, 모바일 반응형 대응</li>
-          <li>marketTab 트래킹 이벤트 개선으로 데이터 수집 정확도 향상</li>
+          <li>네이버·애플·구글·카카오 4종 소셜 로그인 통합 인증 시스템 전체 설계 및 구현 — requiresUnifiedAuth 리다이렉트, 파트너 채널 분기, 경로 복원 로직 포함</li>
+          <li>Flutter 앱-웹 브릿지 구현 — useAppCheck composable로 UA 파싱, iOS/Android 버전 분기, 웹↔앱 양방향 네이티브 통신 구성</li>
+          <li>그랩 제휴쿠폰 공통 모달 컴포넌트 설계 및 API 연동, 모바일 반응형 대응</li>
           <li>SEO 동적 처리, sitemap/robots 관리로 검색 노출 최적화</li>
           <li>레퍼럴 경로 검증 로직 구현으로 파트너스 유입 안정화</li>
         </ul>
@@ -215,11 +215,13 @@
       </div>
 
       <div class="project-block">
-        <div class="project-title">Nuxt3 → Next.js 점진적 전환 프로젝트</div>
+        <div class="project-title">유심사 메인 서비스 Next.js 전환 — Turborepo 모노레포 기반 점진적 전환</div>
         <ul>
-          <li>Turborepo(pnpm workspace) 모노레포 구조 설계</li>
-          <li>Next.js App Router 기반 본인인증(CI) 플로우 설계 및 구현</li>
-          <li>통합인증 플로우 전체 담당 — 레거시 Nuxt3 서비스와 인증 연동</li>
+          <li>Turborepo 기반 모노레포 구성 — 상품·마이페이지·어필리에이트 3개 Next.js 앱과 공유 패키지(@repo/ui ~30개 컴포넌트) 설계 및 초기 구축</li>
+          <li>KCB Okcert 본인인증 플로우를 단일 커스텀 훅(useOkcertVerification)으로 추상화 — 신규·기존 계정 통합 분기, SNS 중복 계정 처리</li>
+          <li>어필리에이트 크리에이터 플랫폼 앱 전체 신규 개발 — 가입 3단계, Zustand 상태관리, 크리에이터 대시보드, 출금 신청 4단계, 판매/출금 내역 조회</li>
+          <li>MarketTap·AirBridge·Naver·Kakao Pixel 멀티 Analytics 연동 — identity ready 플래그로 product_view race condition 방지</li>
+          <li>Web Crypto API 기반 AES-CBC 클라이언트 암호화 구현 — 비밀번호 변경 시 서버/클라이언트 인증 분리 구조 적용</li>
         </ul>
       </div>
     </div>

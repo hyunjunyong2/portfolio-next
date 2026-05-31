@@ -30,21 +30,22 @@ export const projects: Project[] = [
     summary: 'Turborepo 모노레포 기반 Nuxt3 → Next.js 점진적 전환',
 
     description: [
-      'Nuxt3 기반 유심사 메인 서비스를 Next.js App Router로 점진적으로 전환하는 프로젝트를 진행하고 있습니다.',
-      'Turborepo(pnpm workspace) 모노레포 구조로 마이페이지·상품·제휴 앱을 통합 관리합니다.',
-      '기존 Nuxt3 레거시와 병행하며 신규 페이지를 Next.js로 구축하는 점진적 전환 전략을 취하고 있습니다.',
-      '통합인증 플로우 전체를 담당하여 레거시 서비스와의 인증 연동을 설계 및 구현했습니다.',
+      'Turborepo 기반 모노레포 구성으로 상품·마이페이지·어필리에이트 3개 Next.js 앱과 공유 패키지(@repo/ui ~30개 컴포넌트, @repo/utils 등)를 설계 및 초기 구축했습니다.',
+      'KCB Okcert 본인인증 및 계정 통합 플로우를 단일 커스텀 훅(useOkcertVerification)으로 추상화하여 신규·기존 계정 통합 분기와 SNS 중복 계정 처리를 구현했습니다.',
+      '어필리에이트 크리에이터 플랫폼 앱 전체를 신규 개발했습니다. 가입 3단계 플로우(SNS 채널 등록·SMS 인증, Zustand 상태관리), 크리에이터 대시보드, 출금 신청 4단계, 판매/출금 내역 조회를 포함합니다.',
+      'MarketTap·AirBridge·Naver·Kakao Pixel 멀티 Analytics를 동시 연동하고, identity ready 플래그로 product_view race condition을 방지했습니다.',
+      'Web Crypto API 기반 AES-CBC 클라이언트 암호화를 구현하여 비밀번호 변경 시 서버/클라이언트 인증 분리 구조를 적용했습니다.',
     ],
 
     role: [
-      '본인인증 플로우 설계 및 구현 (CI flow, 약관, 인증 실패 UI)',
-      '온보딩 페이지 개발',
-      '내 정보 페이지 전체 UI 설계 및 API 연동',
-      '공통 디자인 컴포넌트 제작 (체크박스, Agreement)',
-      '연결된 통합계정 조회 페이지 생성',
+      'Turborepo 모노레포 구조 설계 및 공유 패키지 초기 구축',
+      'KCB Okcert 본인인증 플로우 설계 및 useOkcertVerification 커스텀 훅 구현',
+      'MarketTap·AirBridge·Naver·Kakao Pixel 멀티 Analytics 연동',
+      'Web Crypto API 기반 AES-CBC 클라이언트 암호화 구현',
+      '항공사 이메일 인증 플로우 신규 구현 (Context API, URL 토큰 파싱)',
     ],
 
-    tech: ['Next.js', 'App Router', 'React', 'Turborepo', 'pnpm workspace', 'Airbridge', 'TailwindCSS'],
+    tech: ['Next.js 16', 'TypeScript', 'Turborepo', 'TailwindCSS v4', 'Zustand', 'Sentry', 'Playwright'],
   },
 
   {
@@ -115,22 +116,22 @@ export const projects: Project[] = [
 
     description: [
       '유심사 메인 서비스 웹사이트의 전반적인 개발 및 유지보수를 담당했습니다.',
-      '이벤트 페이지 댓글 기능, 그랩 제휴쿠폰 모달, 롯데면세점 배너 공통화 등 다수의 기능을 개발했습니다.',
-      '소셜 로그인 통합인증 플로우를 구현하여 카카오/네이버 로그인 사용자 경험을 개선했습니다.',
-      'marketTab 트래킹 이벤트 개선으로 데이터 수집 정확도를 높였습니다.',
-      'SEO 동적 처리, sitemap/robots 관리 등 검색 노출 최적화 작업을 진행했습니다.',
+      '네이버·애플·구글·카카오 4종 소셜 로그인 통합 인증 시스템 전체를 설계 및 구현했습니다.',
+      'Flutter 앱-웹 브릿지를 구현했습니다. useAppCheck composable로 UserAgent를 파싱하여 iOS/Android 기능 지원 버전을 분기하고, 웹↔앱 양방향 네이티브 통신을 구성했습니다.',
+      'SEO 동적 처리(신규 상품 페이지), sitemap/robots 관리로 검색 노출을 최적화했습니다.',
+      '레퍼럴 경로 검증 로직을 구현하여 파트너스 유입을 안정화했습니다.',
     ],
 
     role: [
-      '이벤트 페이지 댓글 CRUD 기능 개발',
+      '네이버·애플·구글·카카오 4종 소셜 로그인 통합 인증 플로우 전체 설계 및 구현',
+      'Flutter 앱-웹 브릿지 구현 (useAppCheck composable, 양방향 네이티브 통신)',
       '그랩 제휴쿠폰 공통 모달 컴포넌트 제작 및 API 연동',
-      '소셜 로그인 통합인증(카카오/네이버) 플로우 구현',
       '레퍼럴 경로 검증 로직 구현',
-      'marketTab 트래킹 개선',
       'SEO 동적 처리 및 이미지 경로 이관',
+      '이벤트 페이지 댓글 CRUD 기능 개발',
     ],
 
-    tech: ['Nuxt3', 'Element Plus', 'i18n', 'Airbridge', 'GTM', 'Pinia'],
+    tech: ['Nuxt3', 'Vue3', 'TypeScript', 'Pinia', 'Element Plus', 'Flutter WebView Bridge'],
   },
 
   {
