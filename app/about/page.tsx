@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import FadeIn from '@/components/motion/FadeIn';
+import Section from '@/components/ui/Section';
+import Tag from '@/components/ui/Tag';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -13,7 +15,7 @@ const CAREER = [
     period: '2024.02 ~ 현재',
     role: 'Frontend Developer',
     description:
-      'Nuxt3 기반 B2C 메인 서비스·어드민·B2B 파트너스 포털을 담당하며, Next.js App Router + Turborepo 모노레포 신규 서비스 구축에 참여하고 있습니다.',
+      'B2C 유심사몰(Nuxt3)의 인증·결제·성능과 공항 송영(TA) 서비스를 담당하고, Turborepo 기반 Next.js 전환과 제휴사 웹(Nuxt 4) 재구축을 진행했습니다. 내부 어드민과 B2B 세일즈 파트너스 포털도 함께 맡았습니다.',
   },
   {
     company: '싸이클로이드',
@@ -26,102 +28,77 @@ const CAREER = [
     period: '2022.02 ~ 2023.10',
     role: 'Frontend Developer',
     description:
-      'Vue/Nuxt 기반 커머스·미디어·백오피스 서비스 개발 및 유지보수를 담당했습니다. Storybook 기반 아토믹 디자인 시스템 구축 경험.',
+      'Vue/Nuxt 기반 커머스·미디어·백오피스 서비스 개발 및 유지보수를 담당했습니다. Storybook 기반 아토믹 디자인 시스템을 구축했습니다.',
   },
 ];
 
 const STACKS = [
-  {
-    label: '주력',
-    items: ['Vue.js 2/3', 'Nuxt.js 2/3', 'Next.js (App Router)', 'TypeScript', 'JavaScript'],
-  },
-  {
-    label: '상태관리 / 라우팅',
-    items: ['Pinia', 'Vuex', 'React Query'],
-  },
-  {
-    label: 'UI / 스타일',
-    items: ['TailwindCSS', 'Element Plus', 'TipTap', 'Storybook'],
-  },
+  { label: '주력', items: ['Vue.js 2/3', 'Nuxt.js 2/3/4', 'TypeScript', 'JavaScript'] },
+  { label: '그 외 프레임워크', items: ['Next.js (App Router)', 'React 19'] },
+  { label: '상태관리 / 데이터', items: ['Pinia', 'Vuex', 'Zustand', 'TanStack Query'] },
+  { label: 'UI / 스타일', items: ['TailwindCSS', 'Element Plus', 'TipTap', 'Storybook'] },
+  { label: '결제 / 연동', items: ['Toss Payments', 'Supabase', 'Airbridge', 'GTM'] },
   {
     label: '인프라 / 도구',
-    items: ['Turborepo', 'pnpm workspace', 'Git Husky', 'Airbridge', 'GTM', 'Sentry'],
+    items: ['Turborepo', 'pnpm workspace', 'GitHub Actions', 'Playwright', 'Sentry', 'Git Husky'],
   },
-  {
-    label: '협업',
-    items: ['Git', 'GitHub', 'Jira', 'Figma'],
-  },
+  { label: 'AI 활용', items: ['Claude Code', 'PRD·설계 문서 선행 개발', 'CLAUDE.md 컨벤션'] },
+  { label: '협업', items: ['Git', 'GitHub', 'Jira', 'Figma'] },
 ];
 
 export default function About() {
   return (
-    <section className="space-y-12">
-      {/* Title */}
+    <div className="space-y-16">
       <FadeIn>
-        <h1 className="text-3xl sm:text-4xl font-bold leading-snug">
-          사용자 경험과 유지보수를 함께 고민하는<br className="hidden sm:block" /> 프론트엔드 개발자
+        <h1 className="font-display text-3xl font-bold leading-snug sm:text-5xl">
+          사용자 경험과 유지보수를 함께
+          <br className="hidden sm:inline" /> 고민하는 프론트엔드 개발자
         </h1>
       </FadeIn>
 
-      {/* Intro */}
-      <FadeIn>
-        <div className="space-y-3 text-sm sm:text-base text-gray-700">
+      <Section label="Intro">
+        <div className="space-y-4 text-base text-muted">
           <p>
-            혼자 문제를 해결하기보다는 팀과 함께 논의하며 더 나은 방향을
-            찾아가는 과정을 즐깁니다.
-            개발 과정에서 발생하는 이슈를 단순히 넘기지 않고,
-            원인을 파악하고 해결하는 것을 중요하게 생각합니다.
+            혼자 문제를 해결하기보다는 팀과 함께 논의하며 더 나은 방향을 찾아가는 과정을
+            즐깁니다. 개발 중 생기는 이슈를 단순히 넘기지 않고 원인을 파악해 해결하는 것을
+            중요하게 생각합니다.
           </p>
           <p>
-            Vue/Nuxt 기반의 실무 경험을 바탕으로, 현재는 Next.js App Router 환경에서
-            확장성과 유지보수를 고려한 프론트엔드 구조에 관심을 두고 있습니다.
+            Vue/Nuxt 실무 경험을 바탕으로, 현재는 Next.js App Router 환경에서 확장성과
+            유지보수를 고려한 프론트엔드 구조에 관심을 두고 있습니다.
           </p>
         </div>
-      </FadeIn>
+      </Section>
 
-      {/* Career */}
-      <FadeIn>
-        <div className="space-y-4">
-          <h2 className="text-xl font-semibold">경력</h2>
-          <ol className="relative border-l border-gray-200 space-y-8 pl-6">
-            {CAREER.map((c) => (
-              <li key={c.company} className="relative">
-                <span className="absolute -left-6.25 top-1.5 h-3 w-3 rounded-full border-2 border-blue-400 bg-white" />
-                <p className="text-xs text-gray-400">{c.period}</p>
-                <p className="mt-0.5 font-semibold">{c.company}</p>
-                <p className="text-sm text-blue-500">{c.role}</p>
-                <p className="mt-1 text-sm text-gray-600">{c.description}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </FadeIn>
-
-      {/* Tech Stack */}
-      <FadeIn>
-        <div className="space-y-4">
-          <h2 className="text-xl font-semibold">기술 스택</h2>
-          <div className="space-y-4">
-            {STACKS.map((stack) => (
-              <div key={stack.label} className="flex flex-col sm:flex-row sm:items-start gap-2">
-                <span className="w-36 shrink-0 text-sm font-medium text-gray-500">
-                  {stack.label}
-                </span>
-                <div className="flex flex-wrap gap-2">
-                  {stack.items.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border bg-gray-50 px-3 py-1 text-sm text-gray-700"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
+      <Section label="Career">
+        <ol className="space-y-8">
+          {CAREER.map((c) => (
+            <li key={c.company} className="grid gap-1 sm:grid-cols-[9.5rem_1fr] sm:gap-6">
+              <p className="font-mono text-xs text-muted sm:pt-1.5">{c.period}</p>
+              <div>
+                <p className="font-display text-xl font-bold">{c.company}</p>
+                <p className="text-sm text-accent">{c.role}</p>
+                <p className="mt-2 text-sm text-muted">{c.description}</p>
               </div>
-            ))}
-          </div>
+            </li>
+          ))}
+        </ol>
+      </Section>
+
+      <Section label="Tech Stack">
+        <div className="space-y-5">
+          {STACKS.map((stack) => (
+            <div key={stack.label} className="flex flex-col gap-2 sm:flex-row sm:gap-6">
+              <span className="w-36 shrink-0 text-sm text-muted sm:pt-1">{stack.label}</span>
+              <div className="flex flex-wrap gap-2">
+                {stack.items.map((item) => (
+                  <Tag key={item}>{item}</Tag>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
-      </FadeIn>
-    </section>
+      </Section>
+    </div>
   );
 }

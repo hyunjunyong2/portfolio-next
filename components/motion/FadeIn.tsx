@@ -1,19 +1,14 @@
-'use client';
-
-import { motion } from 'framer-motion';
-
+/** CSS 애니메이션(.fade, globals.css)만 쓰는 서버 컴포넌트. JS가 없어도 내용이 보인다. */
 export default function FadeIn({
   children,
+  delay = 0,
 }: {
   children: React.ReactNode;
+  delay?: number;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, ease: 'easeOut' }}
-    >
+    <div className="fade" style={delay ? { animationDelay: `${delay}s` } : undefined}>
       {children}
-    </motion.div>
+    </div>
   );
 }

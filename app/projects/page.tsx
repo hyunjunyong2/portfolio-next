@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import ProjectCard from '@/components/projects/ProjectCard';
+import FadeIn from '@/components/motion/FadeIn';
+import Section from '@/components/ui/Section';
 import { projects } from '@/data/projects';
 
 export const metadata: Metadata = {
@@ -9,70 +11,53 @@ export const metadata: Metadata = {
 };
 
 const WORK_GROUPS = [
-  {
-    company: '가제트코리아 (유심사)',
-    period: '2024.02 ~ 현재',
-  },
-  {
-    company: '싸이클로이드',
-    period: '2023.11 ~ 2024.01',
-  },
-  {
-    company: '커넥트웨이브',
-    period: '2022.02 ~ 2023.10',
-  },
+  { company: '가제트코리아 (유심사)', period: '2024.02 ~ 현재' },
+  { company: '싸이클로이드', period: '2023.11 ~ 2024.01' },
+  { company: '커넥트웨이브', period: '2022.02 ~ 2023.10' },
 ];
 
 const sideProjects = projects.filter((p) => p.category === 'side');
 
 export default function ProjectsPage() {
   return (
-    <section className="space-y-16">
-      {/* 실무 프로젝트 */}
-      <div className="space-y-12">
-        <div>
-          <h2 className="text-2xl font-bold">실무 프로젝트</h2>
-          <p className="mt-1 text-sm text-gray-500">
-            실제 서비스 환경에서 개발 및 유지보수를 담당한 프로젝트입니다.
-          </p>
-        </div>
+    <div className="space-y-16">
+      <FadeIn>
+        <h1 className="font-display text-3xl font-bold leading-snug sm:text-5xl">
+          실제 서비스에서 만든 것들
+        </h1>
+        <p className="mt-5 max-w-xl text-muted">
+          실무 프로젝트는 최신순으로 정렬했습니다. 매출·예약 같은 서비스 지표는 팀 성과이며,
+          제가 맡은 범위를 함께 적었습니다.
+        </p>
+      </FadeIn>
 
-        {WORK_GROUPS.map((group) => {
-          const groupProjects = projects.filter(
-            (p) => p.category === 'work' && p.company === group.company
-          );
-          if (groupProjects.length === 0) return null;
+      {WORK_GROUPS.map((group) => {
+        const groupProjects = projects.filter(
+          (p) => p.category === 'work' && p.company === group.company,
+        );
+        if (groupProjects.length === 0) return null;
 
-          return (
-            <div key={group.company} className="space-y-4">
-              <div className="flex items-baseline gap-3">
-                <h3 className="text-lg font-semibold">{group.company}</h3>
-                <span className="text-sm text-gray-400">{group.period}</span>
-              </div>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {groupProjects.map((project) => (
-                  <ProjectCard key={project.slug} project={project} />
-                ))}
-              </div>
+        return (
+          <Section key={group.company} label={group.period} labelAs="p">
+            <h2 className="font-display text-2xl font-bold">{group.company}</h2>
+            <div className="mt-4">
+              {groupProjects.map((project, i) => (
+                <ProjectCard key={project.slug} project={project} index={i} />
+              ))}
             </div>
-          );
-        })}
-      </div>
+          </Section>
+        );
+      })}
 
-      {/* 사이드 프로젝트 */}
-      <div className="space-y-6">
-        <div>
-          <h2 className="text-2xl font-bold">사이드 프로젝트</h2>
-          <p className="mt-1 text-sm text-gray-500">
-            개인 또는 팀으로 진행한 프로젝트입니다.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {sideProjects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
+      <Section label="Side" labelAs="p">
+        <h2 className="font-display text-2xl font-bold">사이드 프로젝트</h2>
+        <p className="mt-1 text-sm text-muted">개인 또는 팀으로 진행한 프로젝트입니다.</p>
+        <div className="mt-4">
+          {sideProjects.map((project, i) => (
+            <ProjectCard key={project.slug} project={project} index={i} />
           ))}
         </div>
-      </div>
-    </section>
+      </Section>
+    </div>
   );
 }

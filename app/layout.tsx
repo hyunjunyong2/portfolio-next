@@ -1,7 +1,34 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+import { Geist_Mono, Noto_Sans_KR, Noto_Serif_KR } from 'next/font/google';
 import './globals.css';
 import Header from '@components/layouts/Header';
 import Footer from '@components/layouts/Footer';
+
+const body = Noto_Sans_KR({
+  variable: '--font-body',
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+const serif = Noto_Serif_KR({
+  variable: '--font-serif',
+  subsets: ['latin'],
+  weight: ['500', '700'],
+  display: 'swap',
+});
+
+const code = Geist_Mono({
+  variable: '--font-code',
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f6f4ee' },
+    { media: '(prefers-color-scheme: dark)', color: '#11110e' },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
@@ -31,16 +58,27 @@ export const metadata: Metadata = {
   },
 };
 
+// 첫 페인트 전에 저장된 테마(없으면 시스템 설정)를 적용해 깜빡임을 막는다.
+const themeScript = `(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=t;})();`;
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko">
-      <body>
+    <html
+      lang="ko"
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
+      className={`${body.variable} ${serif.variable} ${code.variable}`}
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body className="min-h-screen font-sans">
         <Header />
-        <main className="mx-auto w-full max-w-5xl px-4 sm:px-6 py-10">
+        <main className="mx-auto w-full max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
           {children}
         </main>
         <Footer />
