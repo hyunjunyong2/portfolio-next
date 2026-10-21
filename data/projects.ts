@@ -145,7 +145,7 @@ export const projects: Project[] = [
     slug: 'badream',
     title: '바드림 서비스 웹 개발',
     company: '싸이클로이드',
-    period: '2023.11 ~ 2024.01',
+    period: '2023.12 ~ 2024.01',
     summary: '바드림 서비스 프론트엔드 개발 참여',
     link: 'https://ba-dream.com/',
 
@@ -187,7 +187,7 @@ export const projects: Project[] = [
     category: 'work',
     slug: 'ittalk',
     title: '잇톡 백오피스',
-    company: '커넥트웨이브',
+    company: '카비오스',
     period: '2022.11 ~ 2023.02',
     summary: '백오피스 페이지 구축 및 인증 로직, API 연동 구현',
 
@@ -210,8 +210,8 @@ export const projects: Project[] = [
     category: 'work',
     slug: 'nalbang',
     title: '날방 백오피스 및 시청자 서비스',
-    company: '커넥트웨이브',
-    period: '2022.06 ~ 2022.12',
+    company: '카비오스',
+    period: '2022.06 ~ 2022.11',
     summary: '라이브 방송 플랫폼의 백오피스 기능 개발 및 유지보수',
     link: 'https://www.nalbang.tv/',
 
@@ -240,7 +240,7 @@ export const projects: Project[] = [
     category: 'work',
     slug: 'qpicki',
     title: '큐픽 퍼블리싱',
-    company: '커넥트웨이브',
+    company: '카비오스',
     period: '2022.07 ~ 2022.08',
     summary: '쇼핑몰 빌더 서비스 UI 퍼블리싱 및 반응형 작업',
     link: 'https://qpicki.com/introduction/preview?id=1&fileName=main',
@@ -264,8 +264,8 @@ export const projects: Project[] = [
     category: 'work',
     slug: 'justgo',
     title: '일단 떠나',
-    company: '커넥트웨이브',
-    period: '2022.02 ~ 2022.08',
+    company: '카비오스',
+    period: '2022.02 ~ 2022.11',
     summary: '여행 서비스 메인 페이지 리뉴얼 및 웹 성능 개선',
     link: 'https://www.g-justgo.com/#/',
 

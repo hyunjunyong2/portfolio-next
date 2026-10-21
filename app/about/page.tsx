@@ -19,16 +19,23 @@ const CAREER = [
   },
   {
     company: '싸이클로이드',
-    period: '2023.11 ~ 2024.01',
+    period: '2023.12 ~ 2024.02',
     role: 'Frontend Developer',
     description: '바드림 서비스 프론트엔드 개발에 참여했습니다.',
   },
   {
     company: '커넥트웨이브',
-    period: '2022.02 ~ 2023.10',
+    period: '2023.03 ~ 2023.10',
     role: 'Frontend Developer',
     description:
-      'Vue/Nuxt 기반 커머스·미디어·백오피스 서비스 개발 및 유지보수를 담당했습니다. Storybook 기반 아토믹 디자인 시스템을 구축했습니다.',
+      '쇼핑몰 솔루션 신규 어드민을 Nuxt3로 개발하고, Storybook 기반 아토믹 디자인 시스템을 구축했습니다.',
+  },
+  {
+    company: '카비오스',
+    period: '2022.02 ~ 2023.03',
+    role: 'Frontend Developer',
+    description:
+      'Vue/Nuxt 기반 여행·라이브 방송·백오피스 서비스(일단 떠나, 날방, 잇톡 등)의 개발 및 유지보수를 담당했습니다.',
   },
 ];
 

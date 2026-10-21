@@ -12,8 +12,9 @@ export const metadata: Metadata = {
 
 const WORK_GROUPS = [
   { company: '가제트코리아 (유심사)', period: '2024.02 ~ 현재' },
-  { company: '싸이클로이드', period: '2023.11 ~ 2024.01' },
-  { company: '커넥트웨이브', period: '2022.02 ~ 2023.10' },
+  { company: '싸이클로이드', period: '2023.12 ~ 2024.02' },
+  { company: '커넥트웨이브', period: '2023.03 ~ 2023.10' },
+  { company: '카비오스', period: '2022.02 ~ 2023.03' },
 ];
 
 const sideProjects = projects.filter((p) => p.category === 'side');

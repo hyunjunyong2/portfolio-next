@@ -19,12 +19,17 @@ const CAREER = [
   },
   {
     company: '싸이클로이드',
-    period: '2023.11 ~ 2024.01',
+    period: '2023.12 ~ 2024.02',
     desc: 'Vue · Nuxt',
   },
   {
     company: '커넥트웨이브',
-    period: '2022.02 ~ 2023.10',
+    period: '2023.03 ~ 2023.10',
+    desc: 'Nuxt3 · Storybook',
+  },
+  {
+    company: '카비오스',
+    period: '2022.02 ~ 2023.03',
     desc: 'Vue · Nuxt',
   },
 ];
