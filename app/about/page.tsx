@@ -49,7 +49,7 @@ const STACKS = [
     label: '인프라 / 도구',
     items: ['Turborepo', 'pnpm workspace', 'GitHub Actions', 'Playwright', 'Sentry', 'Git Husky'],
   },
-  { label: 'AI 활용', items: ['Claude Code', 'PRD·설계 문서 선행 개발', 'CLAUDE.md 컨벤션'] },
+  { label: 'AI 활용', items: ['Claude Code', '설계 문서 선행 개발', 'CLAUDE.md 컨벤션'] },
   { label: '협업', items: ['Git', 'GitHub', 'Jira', 'Figma'] },
 ];
 
@@ -76,7 +76,7 @@ export default function About() {
           </p>
           <p>
             AI를 활용한 개발 방식에도 관심이 많습니다. 프롬프트 엔지니어링과 바이브 코딩의 속도를
-            살리되, PRD·설계 문서를 먼저 정리하고 타입 체크와 테스트로 결과를 검증해 품질을
+            살리되, 설계 문서를 먼저 정리하고 타입 체크와 테스트로 결과를 검증해 품질을
             함께 가져가는 방법을 실무(파트너스 웹, 디자인 시스템)에 적용하고 있습니다.
           </p>
         </div>
