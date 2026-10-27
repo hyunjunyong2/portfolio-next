@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+/* ── Design tokens ─────────────────────────────────────────────
+   따뜻한 종이 톤 + 잉크 블랙 + 단일 포인트 컬러(주황 계열).
+   라이트/다크는 헤더 토글로 전환하고, 첫 방문은 시스템 설정을 따른다. */
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f6f4ee;
+  --surface: #fffdf8;
+  --ink: #17160f;
+  --muted: #6a675c;
+  --line: #e2ded1;
+  --accent: #b83d14;
+  --accent-soft: #f6e3da;
+  --line-strong: #8f8a7c;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #11110e;
+  --surface: #1a1915;
+  --ink: #efece3;
+  --muted: #a09c8f;
+  --line: #2b2a24;
+  --accent: #ff8a5b;
+  --accent-soft: #2f211a;
+  --line-strong: #6b675b;
+}
+
+/* JS가 꺼져 있을 때만 시스템 설정을 따른다 (평소에는 data-theme 이 우선) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --bg: #11110e;
+    --surface: #1a1915;
+    --ink: #efece3;
+    --muted: #a09c8f;
+    --line: #2b2a24;
+    --accent: #ff8a5b;
+    --accent-soft: #2f211a;
+    --line-strong: #6b675b;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-line-strong: var(--line-strong);
+
+  /* Tailwind 의 text-* 기본 line-height 가 한글 본문에는 빡빡해서 덮어쓴다 */
+  --text-xs--line-height: 1.6;
+  --text-sm--line-height: 1.7;
+  --text-base--line-height: 1.75;
+
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-serif), ui-serif, Georgia, serif;
+  --font-mono: var(--font-code), var(--font-body), ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+[data-theme-switching] *,
+[data-theme-switching] *::before,
+[data-theme-switching] *::after {
+  transition: none !important;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+h1,
+h2 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* 진입 애니메이션: 페이지 로드 시 한 번만 재생한다.
+   JS 없이도 동작하고, 스크롤 위치와 무관하게 최종 상태는 항상 보이는 상태다. */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fade {
+  animation: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .fade {
+    animation: none;
+  }
+}
