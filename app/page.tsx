@@ -42,7 +42,7 @@ const HIGHLIGHTS = [
   },
   {
     project: '세일즈 파트너스 포털',
-    role: '역할 기반 권한 관리 설계 · 대량 개통 프론트엔드 담당 (팀 프로젝트)',
+    role: '역할 기반 권한 관리 설계 · 대량 개통 프론트엔드 담당',
     tech: 'CSV → Excel 전환 · ICCID 처리',
   },
   {
